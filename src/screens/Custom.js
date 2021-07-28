@@ -24,17 +24,6 @@ export default class Custom extends Component {
     this.setState({custom});
   };
 
-  componentDidMount() {
-    fetch('https://reactnative.dev/movies.json')
-      .then((response) => response.json())
-      .then((json) => {
-        this.setState({ data: json.movies });
-      })
-      .catch((error) => console.error(error))
-      .finally(() => {
-        this.setState({ isLoading: false });
-      });
-  }
 
   render() {
     const { data, isLoading } = this.state;
